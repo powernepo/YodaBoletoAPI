@@ -1,6 +1,8 @@
 const Express = require('express');
 const app = Express();
 
+app.use(Express.static(`${__dirname}/public`));
+
 app.get('/', (req, res) => {
   if (true) {
     res.redirect('/inicio')
