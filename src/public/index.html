@@ -12,62 +12,115 @@
             font-family: Montserrat
         }
 
-        
-        body, html{
+
+        body,
+        html {
             padding: 0;
             margin: 0;
             height: 100%;
             width: 100%;
         }
 
-        body{
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
 
-        body > div{
+        body>div {
             width: 100%;
         }
 
-        .header{
+        .header {
             flex: 1;
             background-color: #282828;
         }
 
-        .content{
+        .content {
             flex: 20;
         }
 
-        .footer{
+        .footer {
             flex: 1;
             background-color: #282828;
         }
 
-        .section{
-            border-radius: 5px;
+        .divisor {
             text-align: center;
-            box-shadow: 1px 1px 10px;
-            margin: 0.5%;
+            padding: 5px;
+            display: flex;
+        }
+
+        .nepo,
+        .doni {
+            width: 50%;
+            height: 100%;
+            margin: 2px;
+        }
+
+        .item {
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-       
+
     </div>
     <div class="content">
-        <div class="bigimage">
-            
+        <div>
+
         </div>
-        <div class="section">
-            a
+        <div class="divisor">
+            <div class="nepo">
+                <h1>
+                    Lucas
+                </h1>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+            </div>
+            <div class="doni">
+                <h1>
+                    Donizete
+                </h1>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+                <div class="item">
+                    item
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer">
-        
+
     </div>
 </body>
 
