@@ -2,6 +2,8 @@ const Express = require('express');
 const app = Express();
 
 app.use(Express.static(`${__dirname}/public`));
+app.use(Express.json());
+app.use( '/usuario', require('./router/routes'))
 
 app.get('/', (req, res) => {
   if (true) {
