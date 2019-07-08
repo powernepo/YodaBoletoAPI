@@ -12,17 +12,19 @@
             font-family: Montserrat
         }
 
-        div{
-            background-color: red;
+        
+        body, html{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
         }
 
-        body {
+        body{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin: 0;
-            padding: 0;
         }
 
         body > div{
@@ -31,27 +33,41 @@
 
         .header{
             flex: 1;
+            background-color: #282828;
         }
 
         .content{
-            flex-grow: 1;
+            flex: 20;
         }
 
         .footer{
             flex: 1;
+            background-color: #282828;
+        }
+
+        .section{
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 1px 1px 10px;
+            margin: 0.5%;
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        a
+       
     </div>
     <div class="content">
-        a
+        <div class="bigimage">
+            
+        </div>
+        <div class="section">
+            a
+        </div>
     </div>
     <div class="footer">
-        a
+        
     </div>
 </body>
 
