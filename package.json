@@ -1,0 +1,30 @@
+{
+  "name": "yodaboletoapi",
+  "version": "0.0.1",
+  "description": "API para gereciamento de boletos online",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powernepo/YodaBoletoAPI.git"
+  },
+  "keywords": [
+    "API",
+    "boleto"
+  ],
+  "author": "LNSANTOS & DONIZETEVIDA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/powernepo/YodaBoletoAPI/issues"
+  },
+  "homepage": "https://github.com/powernepo/YodaBoletoAPI#readme",
+  "dependencies": {
+    "koa": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
