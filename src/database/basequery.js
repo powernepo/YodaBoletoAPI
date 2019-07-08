@@ -1,4 +1,4 @@
-const con = require('./con');
+const con = require('./connection');
 
 module.exports = (query, args= [])=>{
     return new Promise((resolve, reject)=>{
