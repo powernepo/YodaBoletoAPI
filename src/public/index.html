@@ -12,7 +12,6 @@
             font-family: Montserrat
         }
 
-
         body,
         html {
             padding: 0;
@@ -47,12 +46,6 @@
             background-color: #282828;
         }
 
-        .divisor {
-            text-align: center;
-            padding: 5px;
-            display: flex;
-        }
-
         .nepo,
         .doni {
             width: 50%;
@@ -74,7 +67,19 @@
         }
 
         .bigimg img {
-            width: 50%;
+            width: 30%;
+        }
+
+        .divisor {
+            text-align: center;
+            padding: 5px;
+            display: flex;
+        }
+
+        @media(max-width: 1000px) {
+            .bigimg img {
+                width: 50%;
+            }
         }
     </style>
 </head>
