@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,51 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <title>Yoda Boleto's</title>
     <style>
-        *{
+        * {
             font-family: Montserrat
+        }
+
+        div{
+            background-color: red;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        body > div{
+            width: 100%;
+        }
+
+        .header{
+            flex: 1;
+        }
+
+        .content{
+            flex-grow: 1;
+        }
+
+        .footer{
+            flex: 1;
         }
     </style>
 </head>
+
 <body>
-    
+    <div class="header">
+        a
+    </div>
+    <div class="content">
+        a
+    </div>
+    <div class="footer">
+        a
+    </div>
 </body>
+
 </html>
