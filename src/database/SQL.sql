@@ -32,16 +32,6 @@ create table boleto(
     foreign key (id_usuario) references usuario(codigo)
 );
 
-create table boleto_verificado(
-	codigo integer primary key auto_increment,
-    id_boleto integer unique not null,
-    id_usuario integer not null,
-    codigo_acesso text,
-    
-    foreign key (id_boleto) references boleto(codigo),
-    foreign key (id_usuario) references usuario(codigo)
-); 
-
 create table permissao(
     -- --------------------------------------
     -- Explicações do CODIGO ----------------
