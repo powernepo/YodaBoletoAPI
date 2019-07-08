@@ -1,20 +1,8 @@
 module.exports = {
-    codigo:{
-        type: BigInt
-    },
-    usuario:{
-        type: String,
-    },
-    nome:{
-        type:String
-    },
-    sobrenome:{
-        type:String
-    },
-    email:{
-        type:String
-    },
-    senha:{
-        type: String
+    createUser(con,sql){
+        con.query(sql,(err, result)=>{
+            if (err) throw err;
+            console.log('Usuário criado com sucesso!')
+        })
     }
 }
