@@ -2,10 +2,10 @@
   "name": "yodaboletoapi",
   "version": "0.0.1",
   "description": "API para gereciamento de boletos online",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/powernepo/YodaBoletoAPI#readme",
   "dependencies": {
     "koa": "^2.7.0",
+    "koa-parser": "^1.0.7",
     "mysql": "^2.17.1"
   },
   "devDependencies": {
