@@ -2,23 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const app = express();
+const { verifyUserLogin } = require('./middleware/middleware');
 
 app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 
 
+
 require('./routes/userRouter')(router);
-
-app.use("/usuario", (req, res, next) => {
-    if (true) //logged
-    {
-        console.log("Usuário logado !");
-        next();
-    } else
-        res.redirect("/");
-});
-
-app.use('/usuario', router);
+app.use('/usuario', verifyUserLogin, router);
 
 require('./routes/someRoutes')(router);
 app.use('/', router);
