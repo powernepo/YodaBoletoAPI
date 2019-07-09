@@ -2,7 +2,7 @@ const user = require('../models/user');
 const encript = require('../helpers/encrypt');
 
 module.exports = {
-    async novo(req, res) {
+    async store(req, res) {
         try {
 
             const { usuario, nome, sobrenome, email, senha } = req.body;
@@ -10,10 +10,10 @@ module.exports = {
             await user.store([usuario, nome, sobrenome, email, hash]);
             res.success("O usuário foi inserido com sucesso !");
         } catch (error) {
-            res.someError(error);
+            res.error(error);
         }
     },
-    async perfil(req, res) {
+    async get(req, res) {
         try {
             const { id } = req.params
             res.send(await user.findById([id]));
@@ -21,8 +21,10 @@ module.exports = {
             res.status(404).send(error);
         }
     },
+    async update(req, res) {
 
-    atualizar(req, res) {
+    },
+    async delete(req, res) {
 
     }
 }
