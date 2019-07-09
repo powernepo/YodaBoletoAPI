@@ -3,12 +3,14 @@ const encript = require('../helpers/encrypt');
 
 module.exports = {
     async novo(req, res) {
-        const { usuario, nome, sobrenome, email, senha } = req.body;
-        console.log("INIT HASH");
-        const hash = await encript.createHash(senha);
-        const isTrue = await encript.verifyHash(senha, hash);
-        console.log(isTrue);
-        res.send(hash);
+        try {
+
+            const { usuario, nome, sobrenome, email, senha } = req.body;
+            const hash = await encript.createHash(senha);
+            await user.store([usuario, nome, sobrenome, email, hash]);
+        } catch (error) {
+            res.someError();
+        }
     },
     async perfil(req, res) {
         try {
