@@ -8,8 +8,9 @@ module.exports = {
             const { usuario, nome, sobrenome, email, senha } = req.body;
             const hash = await encript.createHash(senha);
             await user.store([usuario, nome, sobrenome, email, hash]);
+            res.success("O usuário foi inserido com sucesso !");
         } catch (error) {
-            res.someError();
+            res.someError(error);
         }
     },
     async perfil(req, res) {

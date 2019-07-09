@@ -4,12 +4,7 @@ const express = require('express');
 const router = express.Router();
 const app = express();
 
-app.use((req, res, next) => {
-    res.someError = () => {
-        res.status(400).send("Alguma coisa deu errado !");
-    }
-    next();
-})
+app.use(require('./middleware/resMiddleware')); // Algumas middlewares úteis !
 
 app.use(express.static(`${__dirname}/public`));//Pasta publica
 app.use(express.json());//Parser de JSON
