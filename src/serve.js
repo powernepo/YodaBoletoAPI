@@ -1,18 +1,22 @@
-const Express = require('express');
-const app = Express();
+const express = require('express');
+const userRouter = express.Router();
+const someRouter = express.Router();
 
-app.use(Express.static(`${__dirname}/public`));
-app.use(Express.json());
-app.use( '/usuario', require('./router/routes'))
+const app = express();
 
-app.get('/', (req, res) => {
-  if (true) {
-    res.redirect('/inicio')
-  }
-})
+app.use(express.static(`${__dirname}/public`));
+app.use(express.json());
 
-app.get('/inicio', (req, res) => {
-  res.sendFile(`${__dirname}/public/index.html`)
-})
+require('./routes/userRouter')(userRouter);
+require('./routes/someRoutes')(someRouter);
 
-module.exports = app
+
+app.use('/usuario', userRouter);
+app.use('/', someRouter);
+
+
+
+
+
+
+module.exports = app;
