@@ -1,11 +1,13 @@
 const user = require('../models/user')
-
+const bcrypt = require('bcryptjs')
 module.exports = {
     async novo(req, res) {
-        const { usuario, nome, sobrenome, email, senha } = req.body;
+        const { usuario, nome, sobrenome, email, senha } = req.body;   
         try {
-            await user.store([usuario, nome, sobrenome, email, senha]);
-            res.status(200).send("SUCESSO");
+            bcrypt.hash(req.body.senha,10, async (err,hash)=>{
+                await user.store([usuario, nome, sobrenome, email, hash]);
+                res.status(200).send("SUCESSO");
+            })
         } catch (error) {
             res.status(404).send(error);
         };
