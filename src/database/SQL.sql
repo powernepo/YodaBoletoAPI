@@ -7,8 +7,7 @@ create table usuario(
 	nome varchar(64) not null,
     sobrenome varchar(64) default "",
     email varchar(64) not null unique , -- não pode ser igual
-    senha varchar(32) not null, -- Utiliza para fazer o login
-    _status int default 0, 
+    senha varchar(32) not null -- Utiliza para fazer o login
     -- --------------------------------------
     -- Explicações do STATUS ----------------
 	-- 0 = Aguardando liberação de acesso   -
@@ -25,14 +24,12 @@ create table usuario(
 );
 create table boleto(
 	codigo integer primary key auto_increment,
-    nome_item varchar(64),
+    nome varchar(64),
     valor varchar(64),
-    vencimento date,
-    _status int default 0,
-    emissao long,
+    vencimento date
+    emissao date
     id_usuario int,
-    caminho text,
-    verificado int default 0,
+    caminho text
     -- --------------------------------------
     -- Verificado ---------------------------
     -- 0 = NÃO VIRIFICADO -------------------
