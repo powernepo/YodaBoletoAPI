@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/powernepo/YodaBoletoAPI#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^3.0.6",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
   },
