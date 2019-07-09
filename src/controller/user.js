@@ -10,8 +10,13 @@ module.exports = {
             res.status(404).send(error);
         };
     },
-    perfil(req, res) {
-        res.send("perfil");
+    async perfil(req, res) {
+        try {
+            const { id } = req.params
+            res.send(await user.findById([id]));
+        } catch (error) {
+            res.status(404).send(error);
+        }
     },
     atualizar(req, res) {
 

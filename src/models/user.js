@@ -12,7 +12,7 @@ module.exports = {
         return basequery("UPDATE usuario SET usuario = ?, nome = ? " +
             " sobrenome = ?, email = ?, senha = ? ", user);
     },
-    find(codigo) {
+    findById(codigo) {
         return basequery("SELECT * FROM usuario WHERE codigo = ?", codigo);
     },
     findBy(user) {
