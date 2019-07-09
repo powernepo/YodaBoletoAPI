@@ -7,10 +7,11 @@ module.exports = (router) => {
     });
 
     router.get('/inicio', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../public/index.html`))
+        res.sendFile(path.resolve(`${__dirname}/../public/inicio.html`))
     });
 
     router.use((req, res) => {
         res.status(404).sendFile(path.resolve(`${__dirname}/../public/error404.html`));
     });
+
 }
