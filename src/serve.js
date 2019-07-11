@@ -12,6 +12,9 @@ app.use(express.json());//Parser de JSON
 require('./routes/userRouter')(router);//Rotas de usuário
 app.use('/usuario', verifyUserLogin, router);//Path, middleware e rotas
 
+require('./routes/boletoRouter')(router);//Rotas de boleto
+app.use('/boleto', router);//Path e rotas
+
 require('./routes/someRoutes')(router);//Rota principal
 app.use('/', router);//Path da rota principal
 
