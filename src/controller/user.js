@@ -1,5 +1,7 @@
 const user = require('../models/user');
 const encript = require('../helpers/encrypt');
+const model = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 module.exports = {
     async store(req, res) {
@@ -33,5 +35,26 @@ module.exports = {
     },
     async delete(req, res) {
         res.error("NOT YET");
+    },
+    // NÃO TESTEI SE ESTA LOGANDO E DEVOLVENDO O TOKEN CORRTAMENTE
+    async login(req, res) {
+        // Verificando se USUARIO EXISTE
+        const { usuario, nome, sobrenome, email, senha } = req.body;
+        model.findByUser(usuario)
+            .then(user =>{
+                if (encript.verifyHash(senha,user.senha)) {
+                    // Coloque no ENV SECRET_KEY='secret'
+                    // ESSE SECRET É A SENHA QUE ELE VAI USA PARA DESCRIPTOGRAFAR,
+                    // COMO SE FOSSE UMA CHAVE PARA ELE
+                    let token = jwt.sign(user.codigo,SECRET_KEY,{
+                        expiresIn: 1440 // isso é o tempo que o TOKEN do usuário vai ser válido
+                    })
+                    console.log(user.nome + " esta logado ! " + new Date());
+                    res.send(token) ;
+                } else {
+                    res.redirect("/");
+                }
+        })
+        
     }
 }
